@@ -25,16 +25,25 @@ class EasyButton extends StatefulWidget {
   /// If this is set to `false`, you might want to also check the `useEqualLoadingStateWidgetDimension` parameter and set it to `true`.
   final bool useWidthAnimation;
 
-  /// `useEqualLoadingStateWidgetDimension` will be ignored if `useWidthAnimation` value is `true`.
+  /// Whether or not to force the `loadingStateWidget` to have equal dimension when `useWidthAnimation` is set to false.
+  ///
+  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
+  ///
+  /// This parameter will be ignored when `useWidthAnimation` value is `true`.
   final bool useEqualLoadingStateWidgetDimension;
   final double width;
   final double height;
 
-  /// The button's vertical & horizontal padding.
+  /// The gap between button and it's content.
   ///
   /// This will be ignored when the `type` parameter value is set to `EasyButtonType.text`
   final double contentGap;
   final double borderRadius;
+
+  /// The elevation of the button.
+  ///
+  /// This will only be applied when the `type` parameter value is `EasyButtonType.elevated`
+  final double elevation;
 
   /// Color for the button.
   ///
@@ -57,6 +66,7 @@ class EasyButton extends StatefulWidget {
     this.height = 40.0,
     this.contentGap = 0.0,
     this.borderRadius = 0.0,
+    this.elevation = 0.0,
     this.buttonColor = Colors.blueAccent,
     this.onPressed,
   }) : super(key: key);
@@ -129,7 +139,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
     final ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
       padding: padding,
       primary: buttonColor,
-      elevation: 0.0,
+      elevation: widget.elevation,
       shape: shape,
     );
 

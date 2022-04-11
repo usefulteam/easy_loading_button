@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Loading Button',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -82,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 150.0,
               height: 40.0,
               borderRadius: 4.0,
+              elevation: 2.0,
               contentGap: 6.0,
               buttonColor: Colors.blueAccent,
               onPressed: onButtonPressed,
