@@ -18,6 +18,7 @@ class EasyButton extends StatefulWidget {
   /// Content inside the button when the button state is loading.
   final Widget loadingStateWidget;
 
+  /// The button type.
   final EasyButtonType type;
 
   /// Whether or not to animate the width of the button.
@@ -31,13 +32,19 @@ class EasyButton extends StatefulWidget {
   ///
   /// This parameter will be ignored when `useWidthAnimation` value is `true`.
   final bool useEqualLoadingStateWidgetDimension;
+
+  /// The button width.
   final double width;
+
+  /// The button height.
   final double height;
 
   /// The gap between button and it's content.
   ///
   /// This will be ignored when the `type` parameter value is set to `EasyButtonType.text`
   final double contentGap;
+
+  /// The visual border radius of the button.
   final double borderRadius;
 
   /// The elevation of the button.
@@ -53,6 +60,8 @@ class EasyButton extends StatefulWidget {
   ///
   /// For [`EasyButtonType.text`]: This will be the text color.
   final Color buttonColor;
+
+  /// Function to run when button is pressed.
   final Function? onPressed;
 
   const EasyButton({

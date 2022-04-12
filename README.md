@@ -6,9 +6,10 @@
 [![GitHub issues](https://img.shields.io/github/issues/usefulteam/easy_loading_button.svg)](https://github.com/usefulteam/easy_loading_button/issues)
 [![GitHub license](https://img.shields.io/github/license/usefulteam/easy_loading_button.svg)](https://github.com/usefulteam/easy_loading_button/blob/master/LICENSE)
 
-**easy_loading_button** is a free and open source (MIT license) Material Flutter Button that supports variety of buttons style demands. It is designed to be easy to use and customizable.
+**easy_loading_button** is a simple, easy to use, and customizeable progress/loading _Material Flutter Button_ that supports variety of button styles (elevated, outlined, text).
 
-![](./media/demo.gif)
+![](https://raw.githubusercontent.com/usefulteam/easy_loading_button/main/media/demo.gif)
+
 Or try the [demo on DartPad](https://dartpad.dev/?id=7a5db7e083ecba0362e08603d62c5aec)
 
 > Note:
@@ -24,7 +25,7 @@ Or try the [demo on DartPad](https://dartpad.dev/?id=7a5db7e083ecba0362e08603d62
 Add this to your package's `pubspec.yaml` file:
 
 ```yaml
-easy_loading_button: ^0.2.2
+easy_loading_button: ^0.2.3
 ```
 
 ### **Install it**

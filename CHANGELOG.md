@@ -1,7 +1,12 @@
+## 0.2.3
+
+Tiny Changes
+* Add more documentation comment to the public API
+
 ## 0.2.2
 
 Tiny Changes
-* Fix issue where screenshot was not shown on pub.dev
+* Fix issue where screenshot was not shown on pub.dev (well, this didn't work)
 
 ## 0.2.1
 
