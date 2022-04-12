@@ -1,3 +1,8 @@
+## 0.2.1
+
+Small Changes
+* Correcting code comment's mistake on README.
+
 ## 0.2.0
 
 New Parameter
@@ -6,6 +11,6 @@ New Parameter
 Small Changes
 * Update readme & demo
 
-## 0.2.0
+## 0.1.0
 
 First usable release.

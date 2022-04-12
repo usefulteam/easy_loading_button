@@ -24,7 +24,7 @@ Or try the [demo on DartPad](https://dartpad.dev/?id=7a5db7e083ecba0362e08603d62
 Add this to your package's `pubspec.yaml` file:
 
 ```yaml
-easy_loading_button: '^0.2.0'
+easy_loading_button: ^0.2.1
 ```
 
 ### **Install it**
@@ -81,7 +81,7 @@ EasyButton(
   // This will only be applied when the type parameter value is EasyButtonType.elevated
   elevation: 0.0,
   // The gap between button and it's content.
-  // This parameter will be ignored when the type parameter value is EasyButtonType.elevated
+  // This will be ignored when the `type` parameter value is set to `EasyButtonType.text`
   contentGap: 6.0,
   // Color for the button.
   // For [EasyButtonType.elevated]: This will be the background color.

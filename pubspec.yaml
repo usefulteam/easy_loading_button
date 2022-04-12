@@ -1,6 +1,6 @@
 name: easy_loading_button
 description: A simple & easy to use flutter progress / loading button.
-version: 0.2.0
+version: 0.2.1
 homepage: https://pub.dev/packages/easy_loading_button
 
 environment:
