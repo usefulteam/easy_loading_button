@@ -8,7 +8,7 @@
 
 **easy_loading_button** is a free and open source (MIT license) Material Flutter Button that supports variety of buttons style demands. It is designed to be easy to use and customizable.
 
-![](./example/assets/easy_loading_button.gif)
+![](./media/demo.gif)
 Or try the [demo on DartPad](https://dartpad.dev/?id=7a5db7e083ecba0362e08603d62c5aec)
 
 > Note:
