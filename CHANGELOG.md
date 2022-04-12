@@ -1,6 +1,11 @@
+## 0.2.2
+
+Tiny Changes
+* Fix issue where screenshot was not shown on pub.dev
+
 ## 0.2.1
 
-Small Changes
+Tiny Changes
 * Correcting code comment's mistake on README.
 
 ## 0.2.0
@@ -8,7 +13,7 @@ Small Changes
 New Parameter
 * `elevation`: Now it's possible to set the elevation of elevated button
 
-Small Changes
+Tiny Changes
 * Update readme & demo
 
 ## 0.1.0

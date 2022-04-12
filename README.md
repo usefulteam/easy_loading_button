@@ -24,7 +24,7 @@ Or try the [demo on DartPad](https://dartpad.dev/?id=7a5db7e083ecba0362e08603d62
 Add this to your package's `pubspec.yaml` file:
 
 ```yaml
-easy_loading_button: ^0.2.1
+easy_loading_button: ^0.2.2
 ```
 
 ### **Install it**
