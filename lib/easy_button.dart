@@ -88,7 +88,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   final GlobalKey _globalKey = GlobalKey();
 
   Animation? _anim;
-  late AnimationController _animController;
+  AnimationController? _animController;
   final Duration _duration = const Duration(
     milliseconds: 250,
   );
@@ -99,7 +99,10 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
 
   @override
   dispose() {
-    _animController.dispose();
+    if (_animController != null) {
+      _animController!.dispose();
+    }
+
     super.dispose();
   }
 
@@ -276,7 +279,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
     double targetBorderRadius = _height / 2;
 
     _animController = AnimationController(duration: _duration, vsync: this);
-    _anim = Tween(begin: 0.0, end: 1.0).animate(_animController)
+    _anim = Tween(begin: 0.0, end: 1.0).animate(_animController!)
       ..addListener(() {
         setState(() {
           _width = initialWidth - ((initialWidth - targetWidth) * _anim!.value);
@@ -286,10 +289,10 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
       })
       ..addStatusListener(stateListener);
 
-    _animController.forward();
+    _animController!.forward();
   }
 
   void _reverse() {
-    _animController.reverse();
+    _animController!.reverse();
   }
 }

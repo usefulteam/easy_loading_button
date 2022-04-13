@@ -1,3 +1,8 @@
+## 0.2.4
+
+Bugfix
+* `_animController` hasn't been initialized when it's disposed
+
 ## 0.2.3
 
 Tiny Changes
