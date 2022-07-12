@@ -1,8 +1,10 @@
 ## 0.3.0
 
-Bugfix
-* Bugfix: `CircularProgressIndicator` as the `loadingStateWidget` was not well-displayed
-* Minor change: Now you can use the `useEqualLoadingStateWidgetDimension` parameter even when `useWidthAnimation` is set to `true`. Previously, it was ignored.
+Bugfix:
+* `CircularProgressIndicator` as the `loadingStateWidget` was not well-displayed
+  
+Minor changes:
+* Now you can use the `useEqualLoadingStateWidgetDimension` parameter even when `useWidthAnimation` is set to `true`. Previously, it was ignored.
   This change is part of the bugfix mentioned above.
 * Update the demo. Implementing the bugfix above.
 * Update README
