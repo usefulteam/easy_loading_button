@@ -8,7 +8,6 @@ Minor changes:
   This change is part of the bugfix mentioned above.
 * Update the demo. Implementing the bugfix above.
 * Update README
-* Update the version range of the SDK in pubspec.yaml
 * Update `flutter_lints` package and the affected codes
 
 ## 0.2.4
