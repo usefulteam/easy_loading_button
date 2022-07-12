@@ -1,6 +1,6 @@
 # easy_loading_button_example
 
-Example of easy_loading_button usage.
+Example of `easy_loading_button` usage.
 
 ## Getting Started
 

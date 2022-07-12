@@ -13,26 +13,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Loading Button',
+      title: 'Easy Loading Button',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Loading Button'),
+      home: const ExamplePage(title: 'Easy Loading Button'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class ExamplePage extends StatefulWidget {
+  const ExamplePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ExamplePage> createState() => _ExamplePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ExamplePageState extends State<ExamplePage> {
   @override
   Widget build(BuildContext context) {
     onButtonPressed() async {
@@ -60,14 +60,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Elevated Button',
+              'Elevated button',
             ),
             const SizedBox(
               height: 5,
             ),
             EasyButton(
               idleStateWidget: const Text(
-                'Elevated Button',
+                'Elevated button',
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -92,14 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Elevated Button - Animated',
+              'Elevated button (width animated)',
             ),
             const SizedBox(
               height: 5,
             ),
             EasyButton(
               idleStateWidget: const Text(
-                'Elevated Button',
+                'Elevated button',
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -111,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               useWidthAnimation: true,
+              useEqualLoadingStateWidgetDimension: true,
               width: 150.0,
               height: 40.0,
               borderRadius: 4.0,
@@ -122,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Outlined Button',
+              'Outlined button',
             ),
             const SizedBox(
               height: 5,
@@ -130,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyButton(
               type: EasyButtonType.outlined,
               idleStateWidget: const Text(
-                'Outlined Button',
+                'Outlined button',
                 style: TextStyle(
                   color: Colors.blueAccent,
                 ),
@@ -153,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Outlined Button - Animated',
+              'Outlined button (width animated)',
             ),
             const SizedBox(
               height: 5,
@@ -161,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyButton(
               type: EasyButtonType.outlined,
               idleStateWidget: const Text(
-                'Outlined Button',
+                'Outlined button',
                 style: TextStyle(
                   color: Colors.blueAccent,
                 ),
@@ -173,6 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               useWidthAnimation: true,
+              useEqualLoadingStateWidgetDimension: true,
               width: 150.0,
               height: 40.0,
               borderRadius: 4.0,
@@ -183,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Text Button',
+              'Text button',
             ),
             const SizedBox(
               height: 5,
@@ -191,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EasyButton(
               type: EasyButtonType.text,
               idleStateWidget: const Text(
-                'Text Button',
+                'Text button',
                 style: TextStyle(
                   color: Colors.blueAccent,
                 ),
@@ -213,14 +215,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Elevated Button Fullwidth',
+              'Fullwidth elevated button',
             ),
             const SizedBox(
               height: 5,
             ),
             EasyButton(
               idleStateWidget: const Text(
-                'Elevated Button Fullwidth',
+                'Fullwidth elevated button',
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -243,14 +245,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             const Text(
-              'Elevated Button Fullwidth - Animated',
+              'Fullwidth elevated button (width animated)',
             ),
             const SizedBox(
               height: 5,
             ),
             EasyButton(
               idleStateWidget: const Text(
-                'Elevated Button Fullwidth',
+                'Fullwidth elevated button',
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -262,6 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               useWidthAnimation: true,
+              useEqualLoadingStateWidgetDimension: true,
               width: double.infinity,
               height: 40.0,
               contentGap: 6.0,

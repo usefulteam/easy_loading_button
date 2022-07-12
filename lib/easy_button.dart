@@ -21,16 +21,16 @@ class EasyButton extends StatefulWidget {
   /// The button type.
   final EasyButtonType type;
 
-  /// Whether or not to animate the width of the button.
+  /// Whether or not to animate the width of the button. Default is `true`.
   ///
-  /// If this is set to `false`, you might want to also check the `useEqualLoadingStateWidgetDimension` parameter and set it to `true`.
+  /// If this is set to `false`, you might want to set the `useEqualLoadingStateWidgetDimension` parameter to `true`.
   final bool useWidthAnimation;
 
-  /// Whether or not to force the `loadingStateWidget` to have equal dimension when `useWidthAnimation` is set to false.
+  /// Whether or not to force the `loadingStateWidget` to have equal dimension.
   ///
   /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
   ///
-  /// This parameter will be ignored when `useWidthAnimation` value is `true`.
+  /// This parameter might also be useful when you set the `useWidthAnimation` parameter to `true` combined with `CircularProgressIndicator` as the value for `loadingStateWidget`.
   final bool useEqualLoadingStateWidgetDimension;
 
   /// The button width.
@@ -81,7 +81,7 @@ class EasyButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _EasyButtonState createState() => _EasyButtonState();
+  State createState() => _EasyButtonState();
 }
 
 class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
@@ -171,20 +171,20 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
       case EasyButtonType.elevated:
         return ElevatedButton(
           style: elevatedButtonStyle,
-          child: _buildChildren(context),
           onPressed: _onButtonPressed(),
+          child: _buildChildren(context),
         );
       case EasyButtonType.outlined:
         return TextButton(
           style: outlinedButtonStyle,
-          child: _buildChildren(context),
           onPressed: _onButtonPressed(),
+          child: _buildChildren(context),
         );
       case EasyButtonType.text:
         return TextButton(
           style: textButtonStyle,
-          child: _buildChildren(context),
           onPressed: _onButtonPressed(),
+          child: _buildChildren(context),
         );
     }
   }
@@ -200,14 +200,13 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
 
         break;
       case EasyButtonState.loading:
-        if (!widget.useWidthAnimation &&
-            widget.useEqualLoadingStateWidgetDimension) {
+        contentWidget = widget.loadingStateWidget;
+
+        if (widget.useEqualLoadingStateWidgetDimension) {
           contentWidget = SizedBox.square(
             dimension: widget.height - (contentGap * 2),
             child: widget.loadingStateWidget,
           );
-        } else {
-          contentWidget = widget.loadingStateWidget;
         }
 
         break;

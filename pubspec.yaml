@@ -1,12 +1,13 @@
 name: easy_loading_button
 description: A simple, easy to use, and customizeable progress/loading _Material Flutter Button_ that supports variety of button styles (elevated, outlined, text).
-version: 0.2.4
+version: 0.3.0
 homepage: https://github.com/usefulteam/easy_loading_button
 issue_tracker: https://github.com/usefulteam/easy_loading_button/issues
+publish_to: http://pub.dev
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.16.2 <4.0.0"
+  flutter: ">=2.0.0"
 
 dependencies:
   flutter:
@@ -15,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

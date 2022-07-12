@@ -1,3 +1,14 @@
+## 0.3.0
+
+Bugfix
+* Bugfix: `CircularProgressIndicator` as the `loadingStateWidget` was not well-displayed
+* Minor change: Now you can use the `useEqualLoadingStateWidgetDimension` parameter even when `useWidthAnimation` is set to `true`. Previously, it was ignored.
+  This change is part of the bugfix mentioned above.
+* Update the demo. Implementing the bugfix above.
+* Update README
+* Update the version range of the SDK in pubspec.yaml
+* Update `flutter_lints` package and the affected codes
+
 ## 0.2.4
 
 Bugfix
