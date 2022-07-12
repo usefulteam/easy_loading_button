@@ -3,7 +3,6 @@ description: A simple, easy to use, and customizeable progress/loading _Material
 version: 0.3.0
 homepage: https://github.com/usefulteam/easy_loading_button
 issue_tracker: https://github.com/usefulteam/easy_loading_button/issues
-publish_to: http://pub.dev
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
