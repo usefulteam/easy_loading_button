@@ -1,3 +1,9 @@
+## 0.3.1
+
+Tiny changes:
+* Remove note about demo issue on Dartpad
+* Update dart SDK range to ">=2.17.5 <3.0.0"
+
 ## 0.3.0
 
 Bugfix:

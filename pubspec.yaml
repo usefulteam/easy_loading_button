@@ -1,6 +1,6 @@
 name: easy_loading_button
-description: A simple, easy to use, and customizeable progress/loading _Material Flutter Button_ that supports variety of button styles (elevated, outlined, text).
-version: 0.3.0
+description: A simple, easy to use, and customizable progress/loading _Material Flutter Button_ that supports variety of button styles (elevated, outlined, text).
+version: 0.3.1
 homepage: https://github.com/usefulteam/easy_loading_button
 issue_tracker: https://github.com/usefulteam/easy_loading_button/issues
 
