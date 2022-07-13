@@ -12,12 +12,6 @@
 
 Or try the [demo on DartPad](https://dartpad.dev/?id=7a5db7e083ecba0362e08603d62c5aec)
 
-> Note:
-> 
-> In the DartPad version, our use of `CircularProgressIndicator` as the `loadingStateWidget` might not well-displayed.
-> 
-> But it's fine when using it in mobile phone (Android, in our test).
-
 ## Get started
 
 ### **Depend on it**
