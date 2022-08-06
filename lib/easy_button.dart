@@ -95,7 +95,6 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   final Duration _duration = const Duration(
     milliseconds: 250,
   );
-  // EasyButtonState _state = EasyButtonState.idle;
   late double _width;
   late double _height;
   late double _borderRadius;
