@@ -61,10 +61,12 @@ class EasyButton extends StatefulWidget {
   /// For [`EasyButtonType.text`]: This will be the text color.
   final Color buttonColor;
 
+ EasyButtonState state;
+
   /// Function to run when button is pressed.
   final Function? onPressed;
 
-  const EasyButton({
+   EasyButton({
     Key? key,
     required this.idleStateWidget,
     required this.loadingStateWidget,
@@ -78,6 +80,7 @@ class EasyButton extends StatefulWidget {
     this.elevation = 0.0,
     this.buttonColor = Colors.blueAccent,
     this.onPressed,
+    this.state = EasyButtonState.idle,
   }) : super(key: key);
 
   @override
@@ -92,7 +95,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   final Duration _duration = const Duration(
     milliseconds: 250,
   );
-  EasyButtonState _state = EasyButtonState.idle;
+  // EasyButtonState _state = EasyButtonState.idle;
   late double _width;
   late double _height;
   late double _borderRadius;
@@ -119,7 +122,6 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   }
 
   void _reset() {
-    _state = EasyButtonState.idle;
     _width = widget.width;
     _height = widget.height;
     _borderRadius = widget.borderRadius;
@@ -194,7 +196,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
         widget.type == EasyButtonType.text ? 0.0 : widget.contentGap;
     Widget contentWidget;
 
-    switch (_state) {
+    switch (widget.state) {
       case EasyButtonState.idle:
         contentWidget = widget.idleStateWidget;
 
@@ -224,7 +226,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   }
 
   Future _manageLoadingState() async {
-    if (_state != EasyButtonState.idle) {
+    if (widget.state != EasyButtonState.idle) {
       return;
     }
 
@@ -257,17 +259,17 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
 
   void _toProcessing() {
     setState(() {
-      _state = EasyButtonState.loading;
+      widget.state = EasyButtonState.loading;
     });
   }
 
   void _toDefault() {
     if (mounted) {
       setState(() {
-        _state = EasyButtonState.idle;
+        widget.state = EasyButtonState.idle;
       });
     } else {
-      _state = EasyButtonState.idle;
+      widget.state = EasyButtonState.idle;
     }
   }
 

@@ -33,6 +33,8 @@ class ExamplePage extends StatefulWidget {
 }
 
 class _ExamplePageState extends State<ExamplePage> {
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     onButtonPressed() async {
@@ -46,6 +48,12 @@ class _ExamplePageState extends State<ExamplePage> {
         // and do page navigation in the returned VoidCallback.
         // So that user won't missed out the reverse animation.
       };
+    }
+
+    onLoadingPressed() async {
+      changeLoadingState();
+      await Future.delayed(const Duration(milliseconds: 3000), () => 42);
+      changeLoadingState();
     }
 
     return Scaffold(
@@ -87,6 +95,39 @@ class _ExamplePageState extends State<ExamplePage> {
               contentGap: 6.0,
               buttonColor: Colors.blueAccent,
               onPressed: onButtonPressed,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text(
+              'Elevated button with loading state',
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            EasyButton(
+              idleStateWidget: const Text(
+                'Elevated button',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              loadingStateWidget: const CircularProgressIndicator(
+                strokeWidth: 3.0,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  Colors.white,
+                ),
+              ),
+              useEqualLoadingStateWidgetDimension: true,
+              useWidthAnimation: false,
+              width: 150.0,
+              height: 40.0,
+              borderRadius: 4.0,
+              elevation: 2.0,
+              contentGap: 6.0,
+              buttonColor: Colors.blueAccent,
+              onPressed: onLoadingPressed,
+              state: isLoading ? EasyButtonState.loading : EasyButtonState.idle,
             ),
             const SizedBox(
               height: 15,
@@ -276,4 +317,11 @@ class _ExamplePageState extends State<ExamplePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  void changeLoadingState() {
+    setState(() {
+      isLoading = !isLoading;
+    });
+  }
+
 }
