@@ -1,3 +1,8 @@
+## 0.3.2
+
+Fix warning:
+* Change `primary` (deprecated) to `backgroundColor`. This is just internal change.
+
 ## 0.3.1
 
 Tiny changes:
