@@ -29,6 +29,9 @@ class EasyButton extends StatefulWidget {
   /// Whether or not to force the `loadingStateWidget` to have equal dimension.
   ///
   /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
+  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
+  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
+  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
   ///
   /// This parameter might also be useful when you set the `useWidthAnimation` parameter to `true` combined with `CircularProgressIndicator` as the value for `loadingStateWidget`.
   final bool useEqualLoadingStateWidgetDimension;
@@ -150,7 +153,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
 
     final ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
       padding: padding,
-      primary: buttonColor,
+      backgroundColor: buttonColor,
       elevation: widget.elevation,
       shape: shape,
     );
