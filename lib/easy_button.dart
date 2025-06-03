@@ -29,9 +29,6 @@ class EasyButton extends StatefulWidget {
   /// Whether or not to force the `loadingStateWidget` to have equal dimension.
   ///
   /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
-  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
-  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
-  /// This is useful when you are using `CircularProgressIndicator` as the `loadingStateWidget`.
   ///
   /// This parameter might also be useful when you set the `useWidthAnimation` parameter to `true` combined with `CircularProgressIndicator` as the value for `loadingStateWidget`.
   final bool useEqualLoadingStateWidgetDimension;
@@ -64,12 +61,12 @@ class EasyButton extends StatefulWidget {
   /// For [`EasyButtonType.text`]: This will be the text color.
   final Color buttonColor;
 
- EasyButtonState state;
+  EasyButtonState state;
 
   /// Function to run when button is pressed.
   final Function? onPressed;
 
-   EasyButton({
+  EasyButton({
     Key? key,
     required this.idleStateWidget,
     required this.loadingStateWidget,
