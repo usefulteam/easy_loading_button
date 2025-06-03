@@ -1,3 +1,9 @@
+## [0.4.0] - 2025-06-03
+
+### ✨ New Features
+- **NEW**: Added `state` property to enable external state control
+- Added support for both internal and external button state management modes
+
 ## 0.3.2
 
 Fix warning:
