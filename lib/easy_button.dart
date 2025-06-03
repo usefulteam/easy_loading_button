@@ -61,12 +61,16 @@ class EasyButton extends StatefulWidget {
   /// For [`EasyButtonType.text`]: This will be the text color.
   final Color buttonColor;
 
-  EasyButtonState state;
+  /// The initial state of the button.
+  final EasyButtonState state;
 
   /// Function to run when button is pressed.
+  /// Can return a VoidCallback, FormFieldValidator, or Future.
+  /// If external state control is needed, use a StatefulWidget parent
+  /// to manage the state and rebuild this widget with different state values.
   final Function? onPressed;
 
-  EasyButton({
+  const EasyButton({
     Key? key,
     required this.idleStateWidget,
     required this.loadingStateWidget,
@@ -98,6 +102,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   late double _width;
   late double _height;
   late double _borderRadius;
+  late EasyButtonState _currentState;
 
   @override
   dispose() {
@@ -117,7 +122,19 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   @override
   void initState() {
     _reset();
+    _currentState = widget.state;
     super.initState();
+  }
+
+  @override
+  void didUpdateWidget(EasyButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Update internal state when widget state changes externally
+    if (oldWidget.state != widget.state) {
+      setState(() {
+        _currentState = widget.state;
+      });
+    }
   }
 
   void _reset() {
@@ -195,7 +212,7 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
         widget.type == EasyButtonType.text ? 0.0 : widget.contentGap;
     Widget contentWidget;
 
-    switch (widget.state) {
+    switch (_currentState) {
       case EasyButtonState.idle:
         contentWidget = widget.idleStateWidget;
 
@@ -225,7 +242,20 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
   }
 
   Future _manageLoadingState() async {
+    // If external state control is being used, don't manage state internally
     if (widget.state != EasyButtonState.idle) {
+      // Just call the onPressed function without state management
+      if (widget.onPressed != null) {
+        dynamic result = await widget.onPressed!();
+        if (result != null &&
+            (result is VoidCallback || result is FormFieldValidator)) {
+          result();
+        }
+      }
+      return;
+    }
+
+    if (_currentState != EasyButtonState.idle) {
       return;
     }
 
@@ -258,17 +288,17 @@ class _EasyButtonState extends State<EasyButton> with TickerProviderStateMixin {
 
   void _toProcessing() {
     setState(() {
-      widget.state = EasyButtonState.loading;
+      _currentState = EasyButtonState.loading;
     });
   }
 
   void _toDefault() {
     if (mounted) {
       setState(() {
-        widget.state = EasyButtonState.idle;
+        _currentState = EasyButtonState.idle;
       });
     } else {
-      widget.state = EasyButtonState.idle;
+      _currentState = EasyButtonState.idle;
     }
   }
 
